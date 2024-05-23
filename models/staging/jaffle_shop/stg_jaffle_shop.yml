@@ -25,7 +25,22 @@ models:
               values:
                 ["completed", "shipped", "returned", "return_pending", "placed"]
       - name: customer_id
+        description: foreign key for customers table
         tests:
           - relationships:
               to: ref('stg_jaffle_shop__customers')
               field: customer_id
+
+  - name: dim_customers
+    description: "{{ doc('dim_customers')}}"
+    columns:
+      - name: customer_id
+        description: primary key
+      - name: lifetime_value
+        description: total spent by the customer
+
+  - name: fct_orders
+    description: orders fact table
+    columns:
+      - name: order_id
+        description: primary key

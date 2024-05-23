@@ -11,3 +11,10 @@ One of the following values:
 | returned       | Item has been returned                           |
 
 {% enddocs %}
+
+{% docs dim_customers %}
+
+- combined customer and order data
+- one row per customer
+
+{% enddocs %}

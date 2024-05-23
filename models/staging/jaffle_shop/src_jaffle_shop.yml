@@ -16,7 +16,7 @@ sources:
         freshness: null
         columns:
         - name: id
-          description: primary key for customers data
+          description: primary key
           tests:
             - unique
             - not_null
@@ -25,6 +25,7 @@ sources:
         description: raw orders data
         columns:
         - name: id
+          description: primary key
           tests:
             - unique
             - not_null
