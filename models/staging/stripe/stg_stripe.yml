@@ -2,8 +2,10 @@ version: 2
 
 model:
   - name: stg_stripe__payment
+    descritpion: one unique row per payment
     columns:
       - name: payment_id
+        description: primary key
         tests:
           - unique
           - not_null
@@ -14,3 +16,7 @@ model:
           - relationships:
               to: ref('stg_jaffle_shop__ordes')
               field: order_id
+      - name: status
+        description: was the payment successful or not 
+      - name: amount
+        description: payment amount converted to dollars

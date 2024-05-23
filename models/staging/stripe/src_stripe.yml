@@ -13,7 +13,12 @@ sources:
           warn_after: {count: 24, period: hour}    
         columns:
           - name: id
+            description: primary key
             tests:
               - unique
               - not_null  
+          - name: paymentmethod
+            description: method of payment used in transaction
+          - name: amount
+            description: payment amount in cents
           
