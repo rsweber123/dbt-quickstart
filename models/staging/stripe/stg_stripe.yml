@@ -1,0 +1,16 @@
+version: 2
+
+model:
+  - name: stg_stripe__payment
+    columns:
+      - name: payment_id
+        tests:
+          - unique
+          - not_null
+          - accepted_values:
+              values: ['success','fail']
+      - name: order_id
+        tests:
+          - relationships:
+              to: ref('stg_jaffle_shop__ordes')
+              field: order_id

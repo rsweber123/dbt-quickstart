@@ -10,5 +10,10 @@ sources:
         loaded_at_field: _batched_at
         freshness: 
           error_after: {count: 12, period: hour}
-          warn_after: {count: 24, period: hour}            
-        
+          warn_after: {count: 24, period: hour}    
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null  
+          
